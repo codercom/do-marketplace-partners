@@ -1,8 +1,8 @@
 {
   "variables": {
     "token": "{{env `DIGITALOCEAN_TOKEN`}}",
-    "image_name": "marketplace-snapshot-{{timestamp}}",
-    "apt_packages": "nginx"
+    "image_name": "code-server-{{timestamp}}",
+    "apt_packages": "nginx apt-transport-https ca-certificates curl gnupg-agent software-properties-common"
   },
   "builders": [
     {
@@ -27,6 +27,16 @@
       "destination": "/var/"
     },
     {
+      "type": "file",
+      "source": "files/opt/",
+      "destination": "/opt/"
+    },
+    {
+      "type": "file",
+      "source": "files/usr/",
+      "destination": "/usr/"
+    },
+    {
       "type": "shell",
       "inline": [
         "apt-get -qqy update",
@@ -38,7 +48,11 @@
       "type": "shell",
       "scripts": [
         "scripts/01-test",
-        "scripts/02-docker.sh"
+        "scripts/02-docker.sh",
+        "scripts/03-login.sh",
+        "scripts/03-login.sh",
+        "scripts/90-cleanup.sh",
+        "scripts/99-img_check.sh"
       ]
     }
   ]
