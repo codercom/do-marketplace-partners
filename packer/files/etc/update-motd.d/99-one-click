@@ -13,4 +13,5 @@ If you wish to change the password, just modify /etc/code-server/pass
 and then restart the code-server systemd unit.
 
 Docs for code-server are available at https://github.com/cdr/code-server.
+
 EOF
