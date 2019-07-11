@@ -49,8 +49,7 @@
       "scripts": [
         "scripts/01-test",
         "scripts/02-docker.sh",
-        "scripts/03-login.sh",
-        "scripts/03-login.sh",
+        "scripts/03-code-server.sh",
         "scripts/90-cleanup.sh",
         "scripts/99-img_check.sh"
       ]

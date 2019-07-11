@@ -4,16 +4,13 @@
 
 myip=$(hostname -I | awk '{print$1}')
 cat <<EOF
-The password for accessing code-server is configured on first
-login and is then written to /etc/code-server/pass.
+The password for accessing code-server is randomly generated
+and placed in /etc/code-server/pass.
 
-Once the password is configured, you can access code-server at https://${myip}.
+You can access code-server at https://${myip}.
 
-code-server runs as a systemd service unit and will start at boot.
-You can access its logs with \`journalctl -fu code-server\`.
+If you wish to change the password, just modify /etc/code-server/pass
+and then restart the code-server systemd unit.
 
-If you want to change the password, delete /etc/code-server/pass and
-then run /opt/coder/code-server-pass.sh.
-
-More docs are available at https://github.com/cdr/code-server.
+Docs for code-server are available at https://github.com/cdr/code-server.
 EOF

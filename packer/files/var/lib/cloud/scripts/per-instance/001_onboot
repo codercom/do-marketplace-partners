@@ -4,4 +4,9 @@
 # created from your image.  Things ike generating passwords, configuration requiring IP address
 # or other items that will be unique to each instance should be done in scripts here.
 
-systemctl restart systemd-journald
+set -eu
+
+mkdir -p /etc/code-server
+touch /etc/code-server/pass
+chmod 0600 /etc/code-server/pass
+cat /dev/urandom | head -c 8 | base64 >> /etc/code-server/pass
