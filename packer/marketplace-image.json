@@ -28,11 +28,6 @@
     },
     {
       "type": "file",
-      "source": "files/opt/",
-      "destination": "/opt/"
-    },
-    {
-      "type": "file",
       "source": "files/usr/",
       "destination": "/usr/"
     },

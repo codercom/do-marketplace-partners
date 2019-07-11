@@ -4,14 +4,22 @@
 
 myip=$(hostname -I | awk '{print$1}')
 cat <<EOF
-The password for accessing code-server is randomly generated
+Welcome to code-server.
+code-server may be accessed at https://${myip}.
+
+The password for accessing code-server has been randomly generated
 and placed in /etc/code-server/pass.
 
-You can access code-server at https://${myip}.
+The certificate code-server uses is self signed. It is normal
+if your browser gives you a warning when try to access it for the first time.
+You can use your own certificate easily by adjusting the arguments to code-server
+in /usr/local/bin/code-server.
 
 If you wish to change the password, just modify /etc/code-server/pass
 and then restart the code-server systemd unit.
 
 Docs for code-server are available at https://github.com/cdr/code-server.
+
+This droplet also has nginx configured to redirect all HTTP requests to HTTPS.
 
 EOF
