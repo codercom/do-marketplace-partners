@@ -4,6 +4,8 @@
 
 myip=$(hostname -I | awk '{print$1}')
 cat <<EOF
+********************************************************************************
+
 Welcome to code-server.
 code-server may be accessed at https://${myip}.
 
@@ -22,4 +24,6 @@ Docs for code-server are available at https://github.com/cdr/code-server.
 
 This droplet also has nginx configured to redirect all HTTP requests to HTTPS.
 
+********************************************************************************
+To delete this message of the day: rm -rf /etc/update-motd.d/99-one-click
 EOF
