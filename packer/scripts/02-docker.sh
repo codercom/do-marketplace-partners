@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euxo pipefail
+set -euo pipefail
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 

@@ -12,5 +12,6 @@ if [[ ! -f /etc/code-server/pass ]]; then
 fi
 
 docker run -e "PASSWORD=$(cat /etc/code-server/pass)" \
-	-p 443:8443 -v /root/project:/home/coder/project \
+	-p 443:8443 -v /home/coder:/home/coder \
+	-v /home/coder/project:/home/coder/project \
 	codercom/code-server:1.1156-vsc1.33.1

@@ -12,6 +12,10 @@ code-server may be accessed at https://${myip}.
 The password for accessing code-server has been randomly generated
 and placed in /etc/code-server/pass.
 
+The /home/coder directory is mounted inside the code-server container
+as /home/coder so your project directory on the droplet is at /home/coder/project.
+Nothing else is mounted in.
+
 The certificate code-server uses is self signed. It is normal
 if your browser gives you a warning when try to access it for the first time.
 You can use your own certificate easily by adjusting the arguments to code-server

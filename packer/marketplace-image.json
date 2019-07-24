@@ -2,7 +2,7 @@
   "variables": {
     "token": "{{env `DIGITALOCEAN_TOKEN`}}",
     "image_name": "code-server-{{timestamp}}",
-    "apt_packages": "nginx apt-transport-https ca-certificates curl gnupg-agent software-properties-common"
+    "apt_packages": "nginx apt-transport-https ca-certificates curl gnupg-agent software-properties-common sudo"
   },
   "builders": [
     {
@@ -10,7 +10,7 @@
       "api_token": "{{user `token`}}",
       "image": "ubuntu-18-04-x64",
       "region": "nyc3",
-      "size": "s-1vcpu-1gb",
+      "size": "s-1vcpu-2gb",
       "ssh_username": "root",
       "snapshot_name": "{{user `image_name`}}"
     }
@@ -46,6 +46,7 @@
         "scripts/02-docker.sh",
         "scripts/03-code-server.sh",
         "scripts/04-security-updates.sh",
+        "scripts/05-add-user.sh",
         "scripts/90-cleanup.sh",
         "scripts/99-img_check.sh"
       ]
